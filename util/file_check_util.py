@@ -2,7 +2,7 @@
 # @Time    : 2018/6/4 
 # @Author  : ErichLee ErichLee@qq.com
 # @File    : file_check_util.py
-# @Comment : IO流检查
+# @Comment : IO流检查工具
 #            
 
 import sys
