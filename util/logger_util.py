@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2017/12/21 
-# @Author  : LIYUAN134
+# @Author  : ErichLee ErichLee@qq.com
 # @File    : logger_util.py
 # @Comment : 打印工具
 #            
@@ -23,9 +23,9 @@ def ljinfos(lmgs, *args):
     :param args: 变量参数依次打印
     """
     if lmgs:
-        print '[ ' + lmgs.ljust(30) + ' ]:',
+        print '[{}]:'.format(lmgs.ljust(30)),
     else:
-        print '[ ' + "".ljust(30) + ' ]:',
+        print '[{}]'.format("".ljust(30)),
 
     if any(args):
         for each in args:
@@ -39,9 +39,9 @@ def cinfos(lmgs, *args):
     :param args: 变量参数依次打印
     """
     if lmgs:
-        print '[ ' + lmgs.center(30) + ' ]:',
+        print '[{}]:'.format(lmgs.center(30)),
     else:
-        print '[ ' + "".center(30) + ' ]:',
+        print '[{}]'.format("".center(30)),
 
     if any(args):
         for each in args:
@@ -61,4 +61,3 @@ def errors(*args):
         msg = ' '.join(str_list)
         print '[ERROR]: {}'.format(msg)
         logging.info(args)
-

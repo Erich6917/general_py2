@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2018/3/23 
-# @Author  : LIYUAN134
+# @Author  : ErichLee ErichLee@qq.com
 # @File    : poem_util.py
 # @Comment :
 #
