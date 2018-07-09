@@ -8,32 +8,22 @@ import datetime
 import time
 
 
-# (1)字符串转datetime：
-# def strToDate(dateStr):
-#     string = '2014-01-08 11:59:58'
-#     time1 = datetime.datetime.strptime(string,'%Y-%m-%d %H:%M:%S')
-#     print time1
+def __curr_time():
+    print time.time()
+    print time.localtime((time.time()))
+    print time.localtime()
 
-# (2)datetime转字符串：
-# def DateToStr():
-#     time1_str = datetime.datetime.strftime(time1,'%Y-%m-%d %H:%M:%S')
-#     print time1_str
+    print time.strftime("%Y-%m-%d %H:%M:%S %Y", time.localtime())
 
-#
-# now_time = datetime.datetime.now()
-# timeStr = datetime.datetime.strftime(now_time,'%Y-%m-%d')
-# print timeStr
-
-def currDateFormateA():
-    now_time = datetime.datetime.now()
-    timeStr = datetime.datetime.strftime(now_time, '%Y-%m-%d')
-    timeDate = datetime.datetime.strptime(timeStr, '%Y-%m-%d')
-    return timeDate
+    print datetime.datetime.now()
 
 
-def currDateFormate():
-    now_time = datetime.datetime.now()
-    return now_time
+def curr_date_str():
+    return time.strftime("%Y-%m-%d", time.localtime())
+
+
+def curr_date_str2():
+    return time.strftime("%Y%m%d", time.localtime())
 
 
 def curr_data_ymdhm():
@@ -43,11 +33,3 @@ def curr_data_ymdhm():
 def curr_date_format():
     now_time = datetime.datetime.now()
     return now_time
-
-
-def curr_date_str():
-    return time.strftime("%Y-%m-%d", time.localtime())
-
-
-def curr_date_str2():
-    return time.strftime("%Y%m%d", time.localtime())
