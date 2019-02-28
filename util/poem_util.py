@@ -26,6 +26,7 @@ def random_poem():
     for index in range(0, size):
         s_poem = poem_arr[random.randint(0, length - 1)]
         rt_poem.append(s_poem)
+
     return rt_poem
 
 
