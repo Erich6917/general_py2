@@ -9,10 +9,14 @@ import logging
 
 def infos(*args):
     if args:
-        str_list = []
-        for each in args:
-            str_list.append(str(each))
-        msg = ' '.join(str_list)
+        # str_list = []
+        # for each in args:
+        #     str_list.append(str(each))
+        # msg = ' '.join(str_list)
+        # print msg
+
+        msg_arr = [str(each) for each in args]
+        msg = ' '.join(msg_arr)
         print msg
         logging.info(args)
 
@@ -55,9 +59,12 @@ def println():
 
 def errors(*args):
     if args:
-        str_list = []
-        for each in args:
-            str_list.append(str(each))
-        msg = ' '.join(str_list)
+        # str_list = []
+        # for each in args:
+        #     str_list.append(str(each))
+        # msg = ' '.join(str_list)
+        msg_arr = [str(each) for each in args]
+        msg = ' '.join(msg_arr)
+        print msg
         print '[ERROR]: {}'.format(msg)
         logging.info(args)

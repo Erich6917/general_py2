@@ -7,6 +7,7 @@
 
 import sys
 import os
+import shutil
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -47,3 +48,18 @@ def get_all_files_path_name(path_source='.'):
             file_msg = filename, os.path.join(root, filename), root
             file_list.append(file_msg)
     return file_list
+
+
+def copy_files(source, direct):
+    file_list = get_all_files_path_name(source)
+    if not file_list:
+        print ('source目录未发现内容')
+        return
+
+    for file_msg in file_list:
+        file_name, file_path = file_msg[0], file_msg[1]
+
+        try:
+            shutil.copyfile(file_path, u'{}/{}'.format(direct, file_name))
+        except:
+            print file_name, file_path
