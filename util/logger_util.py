@@ -65,6 +65,6 @@ def errors(*args):
         # msg = ' '.join(str_list)
         msg_arr = [str(each) for each in args]
         msg = ' '.join(msg_arr)
-        print msg
+        # print msg
         print '[ERROR]: {}'.format(msg)
         logging.info(args)
