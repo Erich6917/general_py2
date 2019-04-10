@@ -30,6 +30,14 @@ def curr_data_ymdhm():
     return str(time.strftime("%Y%m%d%H%M", time.localtime()))
 
 
+def curr_ymd():
+    return time.strftime("%Y%m%d", time.localtime())
+
+
+def curr_ymd_hms():
+    return time.strftime("%Y%m%d%H%M%S", time.localtime())
+
+
 def curr_date_format():
     now_time = datetime.datetime.now()
     return now_time
