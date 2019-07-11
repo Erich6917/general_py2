@@ -46,7 +46,7 @@ def get_curr_dir_names(path_source='.'):
     rt_dirs = []
     for filename in os.listdir(path_source):
         path = os.path.join(path_source, filename)
-        if not os.path.isdir(path):
+        if os.path.isdir(path):
             rt_dirs.append(path)
     return rt_dirs
 
@@ -58,6 +58,26 @@ def get_all_filename(path_source='.'):
         for filename in files:
             file_list.append(filename)
     return file_list
+
+
+# 获取指定路径下,当前目录下 所有文件名称列表
+def get_curr_file_names(path_source='.'):
+    rt_dirs = []
+    for filename in os.listdir(path_source):
+        path = os.path.join(path_source, filename)
+        if os.path.isfile(path):
+            rt_dirs.append(filename)
+    return rt_dirs
+
+
+# 获取指定路径下,当前目录下 所有文件名称列表
+def get_curr_files(path_source='.'):
+    rt_dirs = []
+    for filename in os.listdir(path_source):
+        path = os.path.join(path_source, filename)
+        if os.path.isfile(path):
+            rt_dirs.append((filename, path))
+    return rt_dirs
 
 
 def get_all_files(path_source='.'):
@@ -77,6 +97,16 @@ def get_all_files_path_name(path_source='.'):
     return file_list
 
 
+def get_all_files_path_name_endswith(path_source, ends):
+    file_list = []
+    for root, dirs, files in os.walk(path_source):
+        for filename in files:
+            if filename.endswith(ends):
+                file_msg = filename, os.path.join(root, filename), root
+                file_list.append(file_msg)
+    return file_list
+
+
 def copy_files(source, direct):
     file_list = get_all_files_path_name(source)
     if not file_list:
@@ -90,6 +120,16 @@ def copy_files(source, direct):
             shutil.copyfile(file_path, u'{}/{}'.format(direct, file_name))
         except Exception as e:
             print file_name, file_path, e
+
+
+def move_file(source, direct):
+    if not os.path.isfile(source):
+        print('source目录未发现内容', source)
+        return
+    try:
+        shutil.move(source, direct)
+    except:
+        print('ERROR:move文件失败', source, direct)
 
 # def current_path():
 #     """
